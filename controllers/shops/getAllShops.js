@@ -1,9 +1,12 @@
+const Shop = require('../../models/shop');
 
 const getAllShops = async (req, res) => {
-  // const result = await News.find({});
-  res.json({
-    data: ['array of shops '],
+  const data = await Shop.find({});
+  res.status(200).json({
+    data
   });
+  // return ['array of shops '];
+  
 };
 
 module.exports = getAllShops;
