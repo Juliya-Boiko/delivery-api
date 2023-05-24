@@ -2,6 +2,7 @@ const express = require('express');
 const logger = require('morgan');
 const cors = require('cors');
 const shopsRouter = require('./routes/shops');
+const orderRouter = require('./routes/orders');
 require('dotenv').config();
 
 // UTILS & LOGGERS
@@ -13,6 +14,7 @@ app.use(express.json());
 
 // ROUTES
 app.use('/shops', shopsRouter);
+app.use('/orders', orderRouter)
 app.use((_, res) => {
   res.status(404).json({ message: 'Not found route' });
 });

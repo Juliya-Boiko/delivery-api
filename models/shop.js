@@ -1,24 +1,28 @@
 const { Schema, model } = require('mongoose');
 
 const shopSchema = Schema({
+  // _id: {
+  //   type: Schema.Types.ObjectId,
+  //   required: [true, '_id is required field'],
+  // },
   name: {
     type: String,
-    required: [true, 'Set password for user'],
+    required: [true, 'Name is required field'],
   },
-  // email: {
-  //   type: String,
-  //   required: [true, 'Email is required'],
-  //   unique: true,
-  // },
-  // subscription: {
-  //   type: String,
-  //   enum: ["starter", "pro", "business"],
-  //   default: "starter"
-  // },
-  // token: {
-  //   type: String,
-  //   default: null,
-  // }
+  goods: [{
+    _id: {
+      type: Schema.Types.ObjectId,
+      required: [true, '_id is required field'],
+    },
+    name: {
+      type: String,
+      required: [true, 'Name is required field'],
+    },
+    price: {
+    type: String,
+    required: [true, 'Price is required field'],
+  },
+  }]
 }, { versionKey: false, timestamps: true });
 
 const Shop = model('shop', shopSchema);
