@@ -18,7 +18,7 @@ const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short';
 app.use(logger(formatsLogger));
 app.use(cors({
   credentials: true,
-  origin: "http://localhost:3000"
+  origin: "https://juliya-boiko.github.io"
 }));
 app.use(express.json());
 
