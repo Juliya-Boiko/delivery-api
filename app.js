@@ -5,14 +5,17 @@ const shopsRouter = require('./routes/shops');
 const orderRouter = require('./routes/orders');
 require('dotenv').config();
 
+const corsOptions = {
+  origin: 'http://localhost:3000/',
+  optionsSuccessStatus: 200,
+  credentials: true 
+};
+
 // UTILS & LOGGERS
 const app = express();
 const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short';
 app.use(logger(formatsLogger));
-app.use(cors({
-    origin: "*",
-    credentials: true
-  }));
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // ROUTES
