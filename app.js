@@ -5,24 +5,22 @@ const shopsRouter = require('./routes/shops');
 const orderRouter = require('./routes/orders');
 require('dotenv').config();
 
-const corsOptions = {
-  origin: 'http://localhost:3000/',
-  optionsSuccessStatus: 200,
-  credentials: true 
-};
-
 // UTILS & LOGGERS
 const app = express();
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type,  Accept, x-client-key, x-client-token, x-client-secret, Authorization");
+    next();
+});
 const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short';
 app.use(logger(formatsLogger));
-app.use(cors(corsOptions));
+app.use(cors({
+  credentials: true,
+  origin: "http://localhost:3000"
+}));
 app.use(express.json());
-app.use((_req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', '*');
 
-  next();
-});
 
 // ROUTES
 app.use('/delivery', shopsRouter);
