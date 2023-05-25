@@ -7,18 +7,10 @@ require('dotenv').config();
 
 // UTILS & LOGGERS
 const app = express();
-// app.use(function (req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "http://localhost:3000");
-//   res.header("Access-Control-Allow-Methods", "GET, POST");
-//   res.header("Access-Control-Allow-Headers", "Origin, X-Api-Key, X-Requested-With, Content-Type, Accept, Authorization");
-//   res.header("Access-Control-Allow-Credentials", true)
-//   next();
-// });
 const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short';
 app.use(logger(formatsLogger));
 app.use(cors());
 app.use(express.json());
-
 
 // ROUTES
 app.use('/delivery', shopsRouter);
