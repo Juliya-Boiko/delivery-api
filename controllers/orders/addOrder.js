@@ -5,7 +5,7 @@ const addOrder = async (req, res) => {
 
   res.status(200).json({ 
     status: 'Order added',
-    // data
+    data: req.body
    });
 };
 
