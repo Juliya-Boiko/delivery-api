@@ -18,7 +18,7 @@ const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short';
 app.use(logger(formatsLogger));
 app.use(cors({
   credentials: true,
-  origin: "https://juliya-boiko.github.io"
+  origin: "https://delivery-api.vercel.app/"
 }));
 app.use(express.json());
 
