@@ -9,7 +9,7 @@
   ],
     "headers": [
     {
-      "source": "/delivery-api/shops",
+      "source": "/index.js",
       "headers": [
         { "key": "Access-Control-Allow-Credentials", "value": "true" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
@@ -18,7 +18,7 @@
       ]
     },
     {
-      "source": "/delivery-api/orders",
+      "source": "/(.*)",
       "headers": [
         { "key": "Access-Control-Allow-Credentials", "value": "true" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
