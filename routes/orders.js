@@ -6,7 +6,7 @@ const { addOrder } = require('../controllers/orders');
 
 const orderRouter = express.Router();
 
-orderRouter.post('/orders', controllerWrapper(addOrder));
+orderRouter.post('/orders/', controllerWrapper(addOrder));
 
 // orderRouter.post('/orders', validation(orderSchema), controllerWrapper(addOrder));
 
