@@ -1,7 +1,7 @@
-const Order = require('../../models/order');
+// const Order = require('../../models/order');
 
 const addOrder = async (req, res) => {
-  const data = await Order.create({ ...req.body });
+  // const data = await Order.create({ ...req.body });
 
   res
     .header('Access-Control-Allow-Origin', '*')
