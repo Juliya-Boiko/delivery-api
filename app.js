@@ -16,10 +16,7 @@ const app = express();
 // });
 const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short';
 app.use(logger(formatsLogger));
-app.use(cors({
-  credentials: true,
-  origin: "https://delivery-api.vercel.app/"
-}));
+app.use(cors());
 app.use(express.json());
 
 
