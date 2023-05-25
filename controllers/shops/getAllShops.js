@@ -5,8 +5,6 @@ const getAllShops = async (req, res) => {
   res.status(200).json({
     data
   });
-  // return ['array of shops '];
-  
 };
 
 module.exports = getAllShops;
