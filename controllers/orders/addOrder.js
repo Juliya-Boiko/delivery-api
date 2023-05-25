@@ -8,7 +8,10 @@ const addOrder = async (req, res) => {
     .header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
     .header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With, Accept, Origin, X-Requested-With')
     .status(200)
-    .json({ data: 'success' });
+    .json({
+      status: 'success',
+      data: req.body
+    });
 };
 
 module.exports = addOrder;
