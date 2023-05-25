@@ -13,10 +13,10 @@ app.use(cors());
 app.use(express.json());
 
 // ROUTES
-app.use('/shops', shopsRouter);
-app.use('/orders', orderRouter)
+app.use('/delivery', shopsRouter);
+app.use('/delivery', orderRouter)
 app.use((_, res) => {
-  res.status(404).json({ message: 'Not found route' });
+  res.status(404).json({ message: 'Default route 404' });
 });
 
 // ERROR HANDLER

@@ -8,6 +8,6 @@ const orderRouter = express.Router();
 
 // orderRouter.post('/', controllerWrapper(addOrder));
 
-orderRouter.post('/', validation(orderSchema), controllerWrapper(addOrder));
+orderRouter.post('/orders', validation(orderSchema), controllerWrapper(addOrder));
 
 module.exports = orderRouter;
