@@ -6,6 +6,6 @@ const orderSchema = require('../schemas/orderSchema');
 
 const orderRouter = express.Router();
 
-orderRouter.post('/orders', validation(orderSchema), controllerWrapper(addOrder));
+orderRouter.post('/', validation(orderSchema), controllerWrapper(addOrder));
 
 module.exports = orderRouter;
