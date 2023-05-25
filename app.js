@@ -9,7 +9,10 @@ require('dotenv').config();
 const app = express();
 const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short';
 app.use(logger(formatsLogger));
-app.use(cors());
+app.use(cors({
+    origin: "*",
+    credentials: true
+  }));
 app.use(express.json());
 
 // ROUTES
